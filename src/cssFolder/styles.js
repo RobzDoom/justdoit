@@ -40,4 +40,49 @@ export const styles = StyleSheet.create({
   submitButtonText: {
     color: "red",
   },
+  googleLoginButton: {
+    height: 45,
+    marginTop: 10,
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+  },
+  loginButton: {
+    backgroundColor: '#3897f1',
+    borderRadius: 5,
+    height: 45,
+    marginTop: 10,
+  },
+  logoText: {
+    fontSize: 40,
+    fontWeight: "800",
+    marginTop: 80,
+    marginBottom: 30,
+    textAlign: 'center',
+  },
+  loginFormTextInput: {
+    height: 43,
+    fontSize: 14,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#eaeaea',
+    backgroundColor: '#fafafa',
+    paddingLeft: 10,
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
+  containerView: {
+    flex: 1,
+  },
+  loginScreenContainer: {
+    flex: 1,
+  },
+  loginFormView: {
+    flex: 1
+  },
 });
