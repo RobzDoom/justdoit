@@ -1,4 +1,4 @@
-# [TypeScript Example](https://www.typescriptlang.org/)
+
 
 <p>
   <!-- iOS -->
