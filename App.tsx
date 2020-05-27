@@ -1,10 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import WelcomePage from './src/Welcome'
+import { IMAGENAME } from './src/image'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <ImageBackground source={IMAGENAME} style={styles.image}>
+      <WelcomePage personName="Jed" catName="Ked" />
+      </ImageBackground>
     </View>
   );
 }
@@ -12,8 +16,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "column"
   },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
+  text: {
+    color: "white",
+    fontSize: 30,
+    fontWeight: "bold"
+  }
 });
