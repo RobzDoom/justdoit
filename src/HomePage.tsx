@@ -13,10 +13,10 @@ import { Button } from "react-native-elements"
 import { styles } from "./cssFolder/styles";
 import { IMAGENAME } from './image'
 
-const RegisterPage: React.FC = () =>{
+const HomePage: React.FC = () =>{
     return(
-        <Text>Register Here</Text>
+        <Text>This is HomePage</Text>
     );
 }
 
-export default RegisterPage
+export default HomePage
