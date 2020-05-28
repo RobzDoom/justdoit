@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Keyboard,
   Text,
@@ -8,6 +8,7 @@ import {
   Alert,
   KeyboardAvoidingView,
   ImageBackground,
+  StyleSheet
 } from "react-native";
 import { Button } from "react-native-elements";
 import { styles } from "./cssFolder/styles";
@@ -18,7 +19,16 @@ interface PersonNameProps {
   catName: string;
 }
 
-const WelcomePage: React.FC<PersonNameProps> = (props: PersonNameProps) => {
+const WelcomePage: React.FC = () => {
+  //const[searchString, setString] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setError] = useState(null);
+
+  const handleLogin = () => {
+    console.log("Handle Sign in ");
+  };
+
   return (
     <ImageBackground source={IMAGENAME} style={styles.image}>
       <KeyboardAvoidingView behavior="padding">
@@ -27,25 +37,31 @@ const WelcomePage: React.FC<PersonNameProps> = (props: PersonNameProps) => {
             <View>
               <Text style={styles.logoText}>BackPack App</Text>
               <TextInput
-                placeholder="Username"
+                placeholder="Email"
                 placeholderTextColor="#c4c3cb"
                 style={styles.loginFormTextInput}
+                autoCapitalize="none"
+                onChangeText={(email) => setEmail(email)}
+                value={email}
               />
               <TextInput
                 placeholder="Password"
                 placeholderTextColor="#c4c3cb"
                 style={styles.loginFormTextInput}
                 secureTextEntry={true}
+                autoCapitalize="none"
+                onChangeText={(password) => setPassword(password)}
+                value={password}
               />
               <Button
                 buttonStyle={styles.loginButton}
-                onPress={() => Alert.alert("Log In Button")}
+                onPress={() => {handleLogin}}
                 title="Login"
               />
               <Button
+                title="Dont have an Account? Sign Up"
                 buttonStyle={styles.googleLoginButton}
-                onPress={() => Alert.alert("Google Button")}
-                title="Login with Gmail"
+                onPress={() => {Alert.alert("Send me to Register Page")}}
               />
             </View>
           </View>
@@ -83,3 +99,4 @@ export default WelcomePage;
       </View>
     </View> */
 }
+
