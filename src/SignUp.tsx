@@ -15,9 +15,9 @@ const handleSignUp = () => {
     return (
       <View style={styles.container}>
         <Text>Sign Up</Text>
-        {this.state.errorMessage &&
+        {errorMessage &&
           <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
+            {errorMessage}
           </Text>}
         <TextInput
           placeholder="Email"
@@ -34,7 +34,7 @@ const handleSignUp = () => {
           onChangeText={password => setPassword(password)}
           value={password}
         />
-        <Button title="Sign Up" onPress={this.handleSignUp} />
+        <Button title="Sign Up" onPress={handleSignUp} />
         <Button
           title="Already have an account? Login"
           onPress={() => {console.log('Hello')}

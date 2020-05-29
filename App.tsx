@@ -1,29 +1,69 @@
 import "react-native-gesture-handler";
 import React, { useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import WelcomePage from "./src/Welcome";
-import HomePage from "./src/HomePage";
-import { IMAGENAME } from "./src/image";
-import Loading from "./src/Loading";
-import SignUp from "./src/SignUp";
-import { styles } from "./src/cssFolder/styles";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import AppContainer from "./Routes/index"
+import firebase from "firebase"
 
-export default function App() {
-  const Stack = createStackNavigator();
-  return (
-    <SafeAreaView>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomePage} />
-        </Stack.Navigator>
-      </NavigationContainer>
-      </SafeAreaView>
-  );
+var firebaseConfig = {
+  apiKey: "AIzaSyBB8uvPhJAT_pHfKDIWCRQ_Oas7c9Ni0rE",
+  authDomain: "backpackproject-cfcbb.firebaseapp.com",
+  databaseURL: "https://backpackproject-cfcbb.firebaseio.com",
+  projectId: "backpackproject-cfcbb",
+  storageBucket: "backpackproject-cfcbb.appspot.com",
+  messagingSenderId: "659300901405",
+  appId: "1:659300901405:web:1037868884d1c400c19cf4",
+  measurementId: "G-3XJF6KMDQ2"
+};
+
+//Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+const App: React.FC = () =>{
+  return <AppContainer />
 }
+
+export default App
+
+
+// export default function App() {
+//   const navigator = createStackNavigator({
+//     homepage: HomePage 
+//   },{
+//     initialRouteName: 'homepage'
+//   });
+  
+//   const AppContainer = createAppContainer(navigator)
+
+//   return (
+//     <View>
+//       <AppContainer />
+//       <Text>Hello</Text>
+//     </View>
+//   );
+// }
+
 
 // <View style={styles.container}>
 //  <WelcomePage personName="Tay" catName="Kled"/>
 // </View>
+
+{/* <NavigationContainer>
+<Stack.Navigator headerMode="none">
+  <Stack.Screen name="Welcome" component={WelcomePage} options={{
+    headerStyle:{
+      backgroundColor: 'rgba(52, 52, 52, 0.8)'
+    }
+  }}/>
+</Stack.Navigator>
+</NavigationContainer> */}
+
+
+
+
+  // const navigator = createStackNavigator({
+  //       welcome: WelcomePage
+  //     },{
+  //       initialRouteName: 'welcome',
+  //       headerMode: "none"
+  //     });
+      
+  //     const AppContainer = createAppContainer(navigator)
