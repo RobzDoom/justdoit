@@ -69,7 +69,7 @@ const WelcomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
                 title="Dont have an Account? Sign Up"
                 buttonStyle={styles.googleLoginButton}
                 onPress={() => {
-                  Alert.alert("Send me to Register Page");
+                 navigate("signUp")
                 }}
               />
             </View>

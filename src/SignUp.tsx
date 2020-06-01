@@ -27,12 +27,7 @@ const SignUp: React.FC<Props> = ({ navigation: { navigate } }) => {
   };
   return (
     <View style={styles.container}>
-      <Text>Login</Text>
-      {errorMessage && (
-        <Text style={{ color: "red" }}>{errorMessage}</Text>
-      )}
       <Text style={stylesMain.logoText}>SignUp App</Text>
-      <Text>Sign Up</Text>
       {errorMessage && <Text style={{ color: "red" }}>{errorMessage}</Text>}
       <TextInput
         placeholder="Email"
