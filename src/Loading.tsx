@@ -9,9 +9,10 @@ interface Props {
 }
 
 const Loading: React.FC<Props> = ({ navigation: { navigate } }) => {
+  
   useEffect(() =>{
     firebase.auth().onAuthStateChanged(user => {
-      console.log("Did it go throug here?" + user)
+      console.log("Did it go through here?" + user)
       navigate(user === null ? 'signUp': 'homePage')
     })
   })

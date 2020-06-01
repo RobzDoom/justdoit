@@ -8,18 +8,20 @@ import {
   Alert,
   KeyboardAvoidingView,
   ImageBackground,
-  StyleSheet
+  StyleSheet,
 } from "react-native";
 import { Button } from "react-native-elements";
 import { styles } from "./cssFolder/styles";
 import { IMAGENAME } from "./image/";
+import firebase from "firebase";
 
-interface PersonNameProps {
+interface Props {
   personName: string;
   catName: string;
+  navigation: any;
 }
 
-const WelcomePage: React.FC = () => {
+const WelcomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
   //const[searchString, setString] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +29,11 @@ const WelcomePage: React.FC = () => {
 
   const handleLogin = () => {
     console.log("Handle Sign in ");
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => navigate("homePage"))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -55,13 +62,15 @@ const WelcomePage: React.FC = () => {
               />
               <Button
                 buttonStyle={styles.loginButton}
-                onPress={() => {handleLogin}}
+                onPress={handleLogin}
                 title="Login"
               />
               <Button
                 title="Dont have an Account? Sign Up"
                 buttonStyle={styles.googleLoginButton}
-                onPress={() => {Alert.alert("Send me to Register Page")}}
+                onPress={() => {
+                  Alert.alert("Send me to Register Page");
+                }}
               />
             </View>
           </View>
@@ -99,4 +108,3 @@ export default WelcomePage;
       </View>
     </View> */
 }
-
