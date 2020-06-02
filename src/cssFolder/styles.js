@@ -5,8 +5,6 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   homePageContainer:{
-    flex:1,
-    backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
   },
@@ -80,7 +78,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    // resizeMode: "cover",
+    resizeMode: "cover",
     justifyContent: "center"
   },
   containerView: {
@@ -91,5 +89,10 @@ export const styles = StyleSheet.create({
   },
   loginFormView: {
     flex: 1
+  },
+  homeOptions: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
 });
