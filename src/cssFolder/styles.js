@@ -5,21 +5,19 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   homePageContainer:{
-    flex: 1,
+    flex:1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   welcomeView: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-  // whiteTxt: {
-  //   fontSize: 10,
-  //   color: "black",
-  //   textAlign: "center",
-  // },
+  header:{
+    flex:1
+  },
   logHeader:{
     textAlign:"center",
     fontSize: 30,

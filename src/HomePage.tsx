@@ -4,6 +4,8 @@ import { StyleSheet, Platform, Image, Text, View } from "react-native";
 import { styles } from "./cssFolder/styles";
 import firebase from "firebase";
 import { Button } from "react-native-elements";
+import HeaderMain from "./Header"
+import HomePageOptions from "./HomePageOptions"
 
 interface Props {
   navigation: any;
@@ -24,11 +26,13 @@ const HomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
 
   return (
     <View style={styles.homePageContainer}>
-      <Text>This is Home Page</Text>
+      <HeaderMain />
+      <HomePageOptions />
+      {/* <Text>This is Home Page</Text>
       <Button
         title="Sign Out"
         onPress={handleSignOut}
-      />
+      /> */}
     </View>
   );
 };

@@ -14,6 +14,8 @@ import { Button } from "react-native-elements";
 import { styles } from "./cssFolder/styles";
 import { IMAGENAME } from "./image/";
 import firebase from "firebase";
+import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
+import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
 
 interface Props {
   personName: string;
@@ -50,6 +52,7 @@ const WelcomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
                 autoCapitalize="none"
                 onChangeText={(email) => setEmail(email)}
                 value={email}
+                keyboardType="email-address"
               />
               <TextInput
                 placeholder="Password"
