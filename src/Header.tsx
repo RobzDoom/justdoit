@@ -5,12 +5,13 @@ import { styles } from "./cssFolder/styles";
 const HeaderMain: React.FC = () => {
   return (
     <Header
-      leftComponent={{ icon: "menu", color: "#454545" }}
-      centerComponent={{ text: "Welcome To BackApp", style: { color: "#454545", fontWeight:"bold"} }}
-      rightComponent={{ icon: "map", color: "#454545" }}
+      leftComponent={{ icon: "menu", color: "#F0F8FF" }}
+      centerComponent={{ text: "Welcome To BackApp", style: { color: "#F0F8FF", fontWeight:"bold"} }}
+      rightComponent={{ icon: "map", color: "#F0F8FF" }}
       containerStyle={{
-        backgroundColor: '',
+        backgroundColor: "transparent",
         justifyContent: 'space-around',
+        borderBottomWidth:0
       }}
     />
   );

@@ -13,9 +13,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  header:{
-    flex:1
-  },
   logHeader:{
     textAlign:"center",
     fontSize: 30,

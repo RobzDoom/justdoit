@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { StyleSheet, Platform, Image, Text, View, ImageBackground } from "react-native";
 import { styles } from "./cssFolder/styles";
 import firebase from "firebase";
-import { Button } from "react-native-elements";
+import { Button, colors } from "react-native-elements";
 import HeaderMain from "./Header"
 import HomePageOptions from "./HomePageOptions"
 import { HomeImage } from "./image/";
@@ -27,12 +27,22 @@ const HomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
 
   return (
     <View style={styles.container}>
-    <HeaderMain />
     <ImageBackground source={HomeImage} style={styles.image}>
-    <View >
+    <HeaderMain />
+    <View style={{justifyContent:"center", flex:1}}>
       <HomePageOptions />
     </View>
     </ImageBackground>
+    <View>
+    <Button
+        title="Sign Out"
+        onPress={handleSignOut}
+        buttonStyle={{
+          backgroundColor:"#72705B"
+        }
+        }
+      /> 
+    </View>
     </View>
   );
 };
