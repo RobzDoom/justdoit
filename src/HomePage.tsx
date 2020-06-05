@@ -7,19 +7,20 @@ import { Button, colors } from "react-native-elements";
 import HeaderMain from "./Header"
 import HomePageOptions from "./HomePageOptions"
 import { HomeImage } from "./image/";
+import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 
 interface Props {
-  navigation: any;
+  navigation: NavigationScreenProp<any>;
 }
 
-const HomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
+const HomePage: React.FC<Props> = ( { navigation  }) => {
   const [currentUser, setUser] = useState("");
 
   const handleSignOut = () => {
     firebase
       .auth()
       .signOut()
-      .then(() => navigate("welcome"))
+      .then(() => navigation.navigate("welcome"))
       .catch(function (error) {
         // An error happened.
       });
@@ -28,7 +29,7 @@ const HomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
     <ImageBackground source={HomeImage} style={styles.image}>
-    <HeaderMain />
+    <HeaderMain navigation={navigation}/>
     <View style={{justifyContent:"center", flex:1}}>
       <HomePageOptions />
     </View>

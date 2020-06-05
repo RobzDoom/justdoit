@@ -2,8 +2,7 @@ import "react-native-gesture-handler";
 import React, { useState } from "react";
 import AppContainer from "./Routes/index"
 import firebase from "firebase"
-import HomeStack1 from "./Routes/burgerMenuNav"
-import DrawerNavigator from "react-navigation-drawer/lib/typescript/src/navigators/createDrawerNavigator";
+import AppNavigatorDraw from "./Routes/drawer"
 
 var firebaseConfig = {
   apiKey: "AIzaSyBB8uvPhJAT_pHfKDIWCRQ_Oas7c9Ni0rE",
@@ -20,7 +19,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
 const App: React.FC = () =>{
-  return <HomeStack1 />
+  return <AppNavigatorDraw />
 }
 
 // const myApp = DrawerNavigator({
@@ -74,3 +73,5 @@ export default App
   //     });
       
   //     const AppContainer = createAppContainer(navigator)
+
+

@@ -1,36 +1,38 @@
 import "react-native-gesture-handler";
 import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation-drawer";
+import HomeStack from "./index"
 import WelcomePage from "../src/Welcome";
 import HomePage from "../src/HomePage";
 import Loading from "../src/Loading";
 import SignUp from "../src/SignUp";
+import About from "../src/About";
 
-const screens = {
-    Welcome: {
-        screen: WelcomePage
-    },
-    HomePage:{
-        screen: HomePage
-    }
-}
 
-// const a = createStackNavigator({
+// const TestMenu = createStackNavigator(
+//   {
 //     loading: Loading,
-//     signUp: SignUp,
 //     welcome: WelcomePage,
-//     homePage: HomePage
+//     homePage: HomePage,
+//     aboutPage: About,
+//   },
+//   {
+//     initialRouteName: "loading",
+//     headerMode: "none",
+//   }
+// );
 
-//   },{
-//     initialRouteName: 'loading',
-//     headerMode: "none"
-//   });
-
-
-const HomeStack = createStackNavigator(screens, {
-  initialRouteName: ""
+const TestMenu = createStackNavigator({
+  Home: {
+    screen: HomePage
+  },
+  About: {
+    screen: About
+  },
+  Welcome: {
+    screen: WelcomePage
+  }
 })
 
-const HomeStack1 = createAppContainer(HomeStack);
 
-export default HomeStack1
+export default TestMenu;

@@ -1,31 +1,59 @@
 import "react-native-gesture-handler";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation-drawer";
 import WelcomePage from "../src/Welcome";
 import HomePage from "../src/HomePage";
 import Loading from "../src/Loading";
 import SignUp from "../src/SignUp";
+import About from "../src/About";
 
 
-const Navigator = createStackNavigator({
+const Navigator = createStackNavigator(
+  {
     loading: Loading,
     signUp: SignUp,
     welcome: WelcomePage,
-    homePage: HomePage
+    homePage: HomePage,
+    aboutPage: About,
+  },
+  {
+    initialRouteName: "loading",
+    headerMode: "none",
+  }
+);
 
-  },{
-    initialRouteName: 'loading',
-    headerMode: "none"
-  });
+const HomeStack = createStackNavigator(
+  {
+    loading: Loading,
+    signUp: SignUp,
+    welcome: WelcomePage,
+    homePage: HomePage,
+    aboutPage: About,
+  },
+  {
+    initialRouteName: "loading",
+    headerMode: "none",
+  }
+);
 
+const AppNavigator = createDrawerNavigator({
+  Home: {
+    screen: HomePage
+  },
+  About: {
+    screen: About
+  },
+  Welcome: {
+    screen: WelcomePage
+  }
+})
 
-const AppContainer = createAppContainer(Navigator);
+export default HomeStack;
 
-export default AppContainer;
+//const AppContainer = createAppContainer(Navigator);
 
-
-
-
+//export default AppContainer;
 
 // The stack for the main navigation
 // const MainStack = createStackNavigator({
@@ -55,5 +83,3 @@ export default AppContainer;
 //     initialRouteName:"Loading"
 //   }
 // );
-
-

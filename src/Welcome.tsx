@@ -16,14 +16,15 @@ import { IMAGENAME } from "./image/";
 import firebase from "firebase";
 import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
 import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
+import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 
 interface Props {
   personName: string;
   catName: string;
-  navigation: any;
+  navigation: NavigationScreenProp<any>;
 }
 
-const WelcomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
+const WelcomePage: React.FC<Props> = ({ navigation } ) => {
   //const[searchString, setString] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +35,7 @@ const WelcomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => navigate("homePage"))
+      .then(() => navigation.navigate("homePage"))
       .catch((error) => console.log(error));
   };
 
@@ -72,7 +73,7 @@ const WelcomePage: React.FC<Props> = ({ navigation: { navigate } }) => {
                 title="Dont have an Account? Sign Up"
                 buttonStyle={styles.googleLoginButton}
                 onPress={() => {
-                 navigate("signUp")
+                 navigation.navigate("signUp")
                 }}
               />
             </View>

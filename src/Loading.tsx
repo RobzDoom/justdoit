@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
 import firebase from "firebase"
-import { createAppContainer } from 'react-navigation';
-import { NavigationContainer } from '@react-navigation/native';
 
 interface Props {
   navigation: any;

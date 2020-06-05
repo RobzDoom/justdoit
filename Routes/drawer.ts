@@ -1,13 +1,23 @@
 import { createDrawerNavigator } from "react-navigation-drawer";
-import {createAppContainer } from 'react-navigation';
+import {createAppContainer, NavigationScreenProp } from 'react-navigation';
 import HomeStack from "./burgerMenuNav"
+import WelcomePage from "../src/Welcome";
+import HomePage from "../src/HomePage";
+import Loading from "../src/Loading";
+import SignUp from "../src/SignUp";
+import About from "../src/About";
+import TestMenu from "../Routes/burgerMenuNav"
+
+interface Props {
+  navigation: NavigationScreenProp<any>;
+}
 
 
-const RootDrawerNavigator = createDrawerNavigator({
-    Home: {
-        screen: HomeStack,
-    },
-});
+const AppNavigator = createDrawerNavigator({
+  homePage: HomePage,
+  aboutPage: About,
+  })
 
-const Burger = createAppContainer(RootDrawerNavigator)
-export default Burger
+
+const AppNavigatorDraw = createAppContainer(AppNavigator)
+export default AppNavigatorDraw
