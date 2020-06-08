@@ -19,7 +19,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
 const App: React.FC = () =>{
-  return <AppNavigatorDraw />
+  return <AppContainer />
 }
 
 // const myApp = DrawerNavigator({

@@ -17,6 +17,7 @@ const HomePage: React.FC<Props> = ( { navigation  }) => {
   const [currentUser, setUser] = useState("");
 
   const handleSignOut = () => {
+    console.log("LogOut")
     firebase
       .auth()
       .signOut()

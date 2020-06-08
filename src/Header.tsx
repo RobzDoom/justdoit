@@ -6,9 +6,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Icon } from "react-native-elements";
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 import { StackNavigationProp } from '@react-navigation/stack'
-import { Button } from "react-native";
+import { Button, View, Text } from "react-native";
 import  AppNavigatorDraw  from "../Routes/drawer"
-import { DrawerActions } from "react-navigation-drawer";
+import { DrawerActions, DrawerContentComponentProps, DrawerItems, NavigationDrawerScreenProps  } from "react-navigation-drawer";
 
 //type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
 
@@ -34,20 +34,26 @@ const HeaderMain: React.FC<Props> = ({ navigation }) => {
   //   return <AppNavigatorDraw />
   // };
 
+  const SideBar = () => {
+    return <View>
+            <Text>Hello</Text>
+          </View>
+  }
+
   const IconCompoent: React.FC= () => {
     return (
       <Icon
         name="bars"
         type="font-awesome"
         color="#F0F8FF"
-        onPress={() => console.log("")}
+        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
       />
     );
   };
 
   return (
     <Header
-      leftComponent={{ icon: "menu", color: "#F0F8FF" }}
+      leftComponent={<IconCompoent />}
       centerComponent={{
         text: "Welcome To BackApp",
         style: { color: "#F0F8FF", fontWeight: "bold" },
@@ -62,6 +68,6 @@ const HeaderMain: React.FC<Props> = ({ navigation }) => {
   );
 };
 
-export  { HeaderMain };
+export default  HeaderMain;
 
 //{ icon: "menu", color: "#F0F8FF" }

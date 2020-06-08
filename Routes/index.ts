@@ -7,35 +7,8 @@ import HomePage from "../src/HomePage";
 import Loading from "../src/Loading";
 import SignUp from "../src/SignUp";
 import About from "../src/About";
+import AppNavigatorDraw from "./drawer"
 
-
-const Navigator = createStackNavigator(
-  {
-    loading: Loading,
-    signUp: SignUp,
-    welcome: WelcomePage,
-    homePage: HomePage,
-    aboutPage: About,
-  },
-  {
-    initialRouteName: "loading",
-    headerMode: "none",
-  }
-);
-
-const HomeStack = createStackNavigator(
-  {
-    loading: Loading,
-    signUp: SignUp,
-    welcome: WelcomePage,
-    homePage: HomePage,
-    aboutPage: About,
-  },
-  {
-    initialRouteName: "loading",
-    headerMode: "none",
-  }
-);
 
 const AppNavigator = createDrawerNavigator({
   Home: {
@@ -49,11 +22,41 @@ const AppNavigator = createDrawerNavigator({
   }
 })
 
-export default HomeStack;
+const Navigator = createStackNavigator(
+  {
+    loading: Loading,
+    signUp: SignUp,
+    welcome: WelcomePage,
+    homePage: HomePage,
+    aboutPage: About,
+    drawer: AppNavigatorDraw
+  },
+  {
+    initialRouteName: "loading",
+    headerMode: "none",
+  }
+);
 
-//const AppContainer = createAppContainer(Navigator);
+const HomeStack = createStackNavigator(
+  {
+    loading: Loading,
+    signUp: SignUp,
+    welcome: WelcomePage,
+    homePage: HomePage,
+  },
+  {
+    initialRouteName: "loading",
+    headerMode: "none",
+  }
+);
 
-//export default AppContainer;
+
+
+//export default HomeStack;
+
+const AppContainer = createAppContainer(Navigator);
+
+export default AppContainer;
 
 // The stack for the main navigation
 // const MainStack = createStackNavigator({

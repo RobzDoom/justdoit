@@ -13,11 +13,10 @@ interface Props {
 }
 
 
-const AppNavigator = createDrawerNavigator({
-  homePage: HomePage,
+const AppNavigatorDraw = createDrawerNavigator({
+  homePage: WelcomePage,
   aboutPage: About,
   })
 
 
-const AppNavigatorDraw = createAppContainer(AppNavigator)
 export default AppNavigatorDraw

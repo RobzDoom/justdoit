@@ -23,15 +23,9 @@ import About from "../src/About";
 // );
 
 const TestMenu = createStackNavigator({
-  Home: {
-    screen: HomePage
-  },
-  About: {
-    screen: About
-  },
-  Welcome: {
-    screen: WelcomePage
-  }
+  home: HomePage,
+  about: About,
+  
 })
 
 
