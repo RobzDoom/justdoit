@@ -4,7 +4,7 @@ import { styles } from "./cssFolder/styles";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Icon } from "react-native-elements";
-import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
+import { NavigationScreenProp, NavigationState, NavigationParams} from 'react-navigation';
 import { StackNavigationProp } from '@react-navigation/stack'
 import { Button, View, Text } from "react-native";
 import  AppNavigatorDraw  from "../Routes/drawer"

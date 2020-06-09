@@ -9,19 +9,6 @@ import SignUp from "../src/SignUp";
 import About from "../src/About";
 import AppNavigatorDraw from "./drawer"
 
-
-const AppNavigator = createDrawerNavigator({
-  Home: {
-    screen: HomePage
-  },
-  About: {
-    screen: About
-  },
-  Welcome: {
-    screen: WelcomePage
-  }
-})
-
 const Navigator = createStackNavigator(
   {
     loading: Loading,

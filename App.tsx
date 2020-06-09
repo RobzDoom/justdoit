@@ -1,8 +1,20 @@
-import "react-native-gesture-handler";
-import React, { useState } from "react";
-import AppContainer from "./Routes/index"
+import React from "react"
+import { NavigationContainer, NavigationRouteContext } from "@react-navigation/native"
+import { createStackNavigator  } from "@react-navigation/stack"
+
+import { SignIn, CreateAccount, Profile, Home  } from "./src/TestNavComp"
+import { NavigationRouteConfigMap } from "react-navigation";
+
+import { createDrawerNavigator } from "@react-navigation/drawer"
+
+import WelcomePage from "./src/Welcome";
+import HomePage from "./src/HomePage";
+import Loading from "./src/Loading";
+import SignUp from "./src/SignUp";
+import About from "./src/About";
+
 import firebase from "firebase"
-import AppNavigatorDraw from "./Routes/drawer"
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyBB8uvPhJAT_pHfKDIWCRQ_Oas7c9Ni0rE",
@@ -16,62 +28,40 @@ var firebaseConfig = {
 };
 
 //Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const App: React.FC = () =>{
-  return <AppContainer />
+interface Props {}
+
+const AuthStack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const HomeStack = () => {
+  return (
+  <AuthStack.Navigator>
+        <AuthStack.Screen name="welcomeNav" component={WelcomePage} />
+        <AuthStack.Screen name="About" component={About} />
+        <AuthStack.Screen name="Home" component={HomePage} />
+  </AuthStack.Navigator>
+  )
 }
 
-// const myApp = DrawerNavigator({
+const NavWelcome = () => {
+    return(
+        <Drawer.Navigator>
+            <Drawer.Screen name="Welcome From Nav" component={WelcomePage}></Drawer.Screen>
+            <Drawer.Screen name="About Page" component={About}></Drawer.Screen>
+            <Drawer.Screen name="Home" component={HomePage}></Drawer.Screen>
+        </Drawer.Navigator>
+    )
+}
 
-// })
+ const App: React.FC<Props> = ({}) => {
 
+  return (
+    <NavigationContainer>
+       <NavWelcome />
+    </NavigationContainer>
+  );
+}
 
-export default App
-
-
-// export default function App() {
-//   const navigator = createStackNavigator({
-//     homepage: HomePage 
-//   },{
-//     initialRouteName: 'homepage'
-//   });
-  
-//   const AppContainer = createAppContainer(navigator)
-
-//   return (
-//     <View>
-//       <AppContainer />
-//       <Text>Hello</Text>
-//     </View>
-//   );
-// }
-
-
-// <View style={styles.container}>
-//  <WelcomePage personName="Tay" catName="Kled"/>
-// </View>
-
-{/* <NavigationContainer>
-<Stack.Navigator headerMode="none">
-  <Stack.Screen name="Welcome" component={WelcomePage} options={{
-    headerStyle:{
-      backgroundColor: 'rgba(52, 52, 52, 0.8)'
-    }
-  }}/>
-</Stack.Navigator>
-</NavigationContainer> */}
-
-
-
-
-  // const navigator = createStackNavigator({
-  //       welcome: WelcomePage
-  //     },{
-  //       initialRouteName: 'welcome',
-  //       headerMode: "none"
-  //     });
-      
-  //     const AppContainer = createAppContainer(navigator)
-
-
+export default App;

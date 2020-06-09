@@ -17,6 +17,7 @@ import firebase from "firebase";
 import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
 import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
+import HomePage from "./HomePage";
 
 interface Props {
   personName: string;
@@ -35,7 +36,7 @@ const WelcomePage: React.FC<Props> = ({ navigation } ) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => navigation.navigate("homePage"))
+      .then(() => navigation.navigate("Home"))
       .catch((error) => console.log(error));
   };
 
