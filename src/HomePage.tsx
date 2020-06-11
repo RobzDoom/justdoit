@@ -8,12 +8,14 @@ import HeaderMain from "./Header"
 import HomePageOptions from "./HomePageOptions"
 import { HomeImage } from "./image/";
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 interface Props {
-  navigation: NavigationScreenProp<any>;
+  navigation: any;
+  drawerNavigation: DrawerNavigationProp<any>;
 }
 
-const HomePage: React.FC<Props> = ( { navigation  }) => {
+const HomePage: React.FC<Props> = ( { navigation, drawerNavigation}) => {
   const [currentUser, setUser] = useState("");
 
   const handleSignOut = () => {
@@ -32,7 +34,7 @@ const HomePage: React.FC<Props> = ( { navigation  }) => {
     <ImageBackground source={HomeImage} style={styles.image}>
     <HeaderMain navigation={navigation}/>
     <View style={{justifyContent:"center", flex:1}}>
-      <HomePageOptions />
+      <HomePageOptions navigation={navigation} />
     </View>
     </ImageBackground>
     <View>

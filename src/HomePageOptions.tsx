@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import { Header, Text, Icon } from "react-native-elements";
 import { styles } from "./cssFolder/styles";
 import { View } from "react-native";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { NavigationScreenProp, NavigationState, NavigationParams } from "react-navigation";
 
-const MainPageOptions: React.FC = () => {
+interface Props {
+  navigation:  NavigationScreenProp<NavigationState, NavigationParams>;
+}
+
+const MainPageOptions: React.FC<Props> = ({navigation}) => {
   return (
     <View>
       <View style={{ backgroundColor: "#36413e", flexShrink: 1, margin: 30 }}>
@@ -54,6 +60,7 @@ const MainPageOptions: React.FC = () => {
             type="font-awesome"
             color="white"
             style={{ padding: 10 }}
+            onPress={() => navigation.navigate("backPackCalc")}
           />
         </View>
       </View>

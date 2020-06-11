@@ -13,7 +13,7 @@ const Loading: React.FC<Props> = ({ navigation: { navigate } }) => {
   useEffect(() =>{
     firebase.auth().onAuthStateChanged(user => {
       console.log("Did it go through here?" + user)
-      navigate(user === null ? 'welcome': 'homePage')
+      navigate(user === null ? 'welcome': 'home')
     })
   })
 

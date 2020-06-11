@@ -5,27 +5,24 @@ import {
   View,
   TextInput,
   TouchableWithoutFeedback,
-  Alert,
   KeyboardAvoidingView,
   ImageBackground,
-  StyleSheet,
 } from "react-native";
 import { Button } from "react-native-elements";
 import { styles } from "./cssFolder/styles";
 import { IMAGENAME } from "./image/";
 import firebase from "firebase";
-import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
-import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
-import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
+import { NavigationScreenProp, NavigationState, NavigationParams} from 'react-navigation';
 import HomePage from "./HomePage";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { DrawerActions } from '@react-navigation/native';
 
 interface Props {
-  personName: string;
-  catName: string;
-  navigation: NavigationScreenProp<any>;
+  navigation: any;
+  //drawerNav: DrawerNavigationProp<any>;
 }
 
-const WelcomePage: React.FC<Props> = ({ navigation } ) => {
+const WelcomePage: React.FC<Props> = ({ navigation} ) => {
   //const[searchString, setString] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +33,7 @@ const WelcomePage: React.FC<Props> = ({ navigation } ) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => navigation.navigate("Home"))
+      .then(() => navigation.navigate("home"))
       .catch((error) => console.log(error));
   };
 
@@ -75,6 +72,13 @@ const WelcomePage: React.FC<Props> = ({ navigation } ) => {
                 buttonStyle={styles.googleLoginButton}
                 onPress={() => {
                  navigation.navigate("signUp")
+                }}
+              />
+              <Button
+                title="Dont have an Account? Sign Up"
+                buttonStyle={styles.googleLoginButton}
+                onPress={() => {
+                 navigation.dispatch(DrawerActions.openDrawer())
                 }}
               />
             </View>
