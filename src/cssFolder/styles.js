@@ -75,7 +75,6 @@ export const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center"
   },
   containerView: {
     flex: 1,
@@ -91,4 +90,10 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
+  picker: {
+    backgroundColor:"#FFFAF0",
+    bottom: 0,
+    left: 0,
+    right: 0
+  }
 });

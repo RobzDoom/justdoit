@@ -45,14 +45,14 @@ const HomeStack = () => {
       <AuthStack.Screen name="loading" component={Loading} />
       <AuthStack.Screen name="About" component={About} />
       <AuthStack.Screen name="home" component={HomePage} />
-      <AuthStack.Screen name="navW" component={NavWelcome} />
+      <AuthStack.Screen name="navW" component={NavWelcome} options={{ headerShown: false }}/>
     </AuthStack.Navigator>
   );
 };
 
 const HomeStack1 = () => {
   return (
-    <AuthStack.Navigator>
+    <AuthStack.Navigator headerMode={"none"}>
       <AuthStack.Screen name="home" component={HomePage} />
       <AuthStack.Screen name="about" component={About} />
       <AuthStack.Screen name="backPackCalc" component={BackPackCalculator} />
