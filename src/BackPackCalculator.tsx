@@ -8,6 +8,9 @@ import {
   Button,
   ImageBackground,
   Picker,
+  TextInput,
+  Image,
+  KeyboardAvoidingView
 } from "react-native";
 import HeaderMain from "./Header";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
@@ -18,37 +21,51 @@ import { Icon } from "react-native-elements";
 
 //const [selectedValue, setSelectedValue] = useState("java");
 
-
 interface Props {
   children: ReactNode;
-  navigation: DrawerNavigationProp<any>
+  navigation: DrawerNavigationProp<any>;
 }
 
 const BackPackCalculator: React.FC<Props> = ({ children, navigation }) => {
   const [selectedValue, setSelectedValue] = useState("java");
+
+  const [weight, setWeight] = useState("100");
+  
   return (
-    <ImageBackground source={HomeImage} style={styles.container}>
-    <HeaderMain navigation={navigation}/>
-    <View style={{ backgroundColor: "#17301C", flexShrink: 1, margin: 30 }}>
-        <Text style={{ fontSize: 20, padding: 10, color: "white" }}>
-          Check List
-        </Text>
-        <View style={{ flexDirection: "row" }}>
-          <Text style={{ padding: 10, color: "white", flexShrink: 1 }}>
-            Make sure you are ready for your adveture! Checklist will help you
-            organize items needed for trip
+    
+    <View style={styles.container}>
+      <KeyboardAvoidingView>
+      <Image source={HomeImage} style={styles.image}>
+      </Image>
+      </KeyboardAvoidingView>
+      <HeaderMain navigation={navigation} />
+        <View style={{ backgroundColor: "#17301C", flexShrink: 1, margin: 30 }}>
+          <Text
+            style={{
+              fontSize: 20,
+              padding: 10,
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            Weight
           </Text>
+          <View style={{ flexDirection: "row" }}>
+            <Text style={{ padding: 10, color: "white", flexShrink: 1 }}>
+              What is your Weight: {weight}
+            </Text>
+          </View>
+          <TextInput placeholder="Enter Weight Here" keyboardType="name-phone-pad" style={styles.loginFormTextInput} onChangeText={(weight) => setWeight(weight)}></TextInput>
         </View>
-        <Picker
+      {/* <Picker
         selectedValue={selectedValue}
         style={styles.picker}
         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
       >
-        <Picker.Item label="Java" value="java"/>
+        <Picker.Item label="Java" value="java" />
         <Picker.Item label="JavaScript" value="js" />
-      </Picker>
-      </View>
-    </ImageBackground>
+      </Picker> */}
+    </View>
   );
 };
 

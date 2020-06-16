@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions} from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -73,8 +73,19 @@ export const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
   },
+
+
   image: {
     flex: 1,
+    // position: 'absolute',
+    // width:'100%',
+    // height:'100%',
+    // zIndex:-1
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
   },
   containerView: {
     flex: 1,
@@ -92,8 +103,9 @@ export const styles = StyleSheet.create({
   },
   picker: {
     backgroundColor:"#FFFAF0",
-    bottom: 0,
+    bottom: 40,
     left: 0,
-    right: 0
+    right: 0,
+    top:0,
   }
 });

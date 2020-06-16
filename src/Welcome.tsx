@@ -44,6 +44,7 @@ const WelcomePage: React.FC<Props> = ({ navigation} ) => {
           <View>
             <View>
               <Text style={styles.logoText}>BackPack App</Text>
+              <View style={{marginTop:130}}>
               <TextInput
                 placeholder="Email"
                 placeholderTextColor="#c4c3cb"
@@ -52,6 +53,7 @@ const WelcomePage: React.FC<Props> = ({ navigation} ) => {
                 onChangeText={(email) => setEmail(email)}
                 value={email}
                 keyboardType="email-address"
+                
               />
               <TextInput
                 placeholder="Password"
@@ -81,6 +83,7 @@ const WelcomePage: React.FC<Props> = ({ navigation} ) => {
                  navigation.dispatch(DrawerActions.openDrawer())
                 }}
               />
+              </View>
             </View>
           </View>
         </TouchableWithoutFeedback>

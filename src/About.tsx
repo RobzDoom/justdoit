@@ -4,6 +4,8 @@ import { NavigationScreenProp, NavigationParams } from "react-navigation";
 import { DrawerActions, NavigationState, CompositeNavigationProp } from '@react-navigation/native';
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { Icon, Header } from "react-native-elements";
+import { styles } from "./cssFolder/styles";
+import { TextInput } from "react-native-gesture-handler";
 
 
 
@@ -58,6 +60,7 @@ const About: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
+    <View style={styles.container}>
     <Header
       leftComponent={<IconCompoent />}
       centerComponent={{
@@ -71,6 +74,16 @@ const About: React.FC<Props> = ({ navigation }) => {
         borderBottomWidth: 0,
       }}
     />
+    <View
+      style={{
+        height: 100,
+        padding: 20
+      }}
+    >
+      <Text style={{textAlign:"center", alignItems: 'center',}}>Hello World!</Text>
+      <TextInput placeholder="Enter Weight Here" keyboardType="name-phone-pad"></TextInput>
+    </View>
+    </View>
   );
 };
 

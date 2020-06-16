@@ -38,14 +38,14 @@ const HomePage: React.FC<Props> = ( { navigation, drawerNavigation}) => {
     </View>
     </ImageBackground>
     <View>
-    <Button
+    {/* <Button
         title="Sign Out"
         onPress={handleSignOut}
         buttonStyle={{
           backgroundColor:"#72705B"
         }
         }
-      /> 
+      />  */}
     </View>
     </View>
   );
