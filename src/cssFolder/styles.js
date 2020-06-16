@@ -107,5 +107,17 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top:0,
+  },
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
+    color:"white",
+    textAlign: "center"
   }
 });
