@@ -27,6 +27,7 @@ const MainPageOptions: React.FC<Props> = ({navigation}) => {
             type="font-awesome"
             color="white"
             style={{ padding: 10 }}
+            onPress={() => navigation.navigate("backPackCalc")}
           />
         </View>
       </View>
@@ -60,7 +61,7 @@ const MainPageOptions: React.FC<Props> = ({navigation}) => {
             type="font-awesome"
             color="white"
             style={{ padding: 10 }}
-            onPress={() => navigation.navigate("backPackCalc")}
+            onPress={() => navigation.navigate("checkList")}
           />
         </View>
       </View>

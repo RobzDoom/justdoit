@@ -123,7 +123,7 @@ const BackPackCalculator: React.FC<Props> = ({ children, navigation }) => {
           <Picker.Item label="5 Days" value="2" />
         </Picker> */}
         <RNPickerSelect
-            onValueChange={(value) => console.log(value)}
+            onValueChange={(days) => setDays(days)}
             placeholder={{
               label: 'Select Number of Days...',
               value: null,

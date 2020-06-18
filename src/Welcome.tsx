@@ -77,7 +77,7 @@ const WelcomePage: React.FC<Props> = ({ navigation} ) => {
                 }}
               />
               <Button
-                title="Dont have an Account? Sign Up"
+                title="Open Tab [Test]"
                 buttonStyle={styles.googleLoginButton}
                 onPress={() => {
                  navigation.dispatch(DrawerActions.openDrawer())

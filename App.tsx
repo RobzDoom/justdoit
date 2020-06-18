@@ -15,6 +15,7 @@ import HomePage from "./src/HomePage";
 import Loading from "./src/Loading";
 import SignUp from "./src/SignUp";
 import About from "./src/About";
+import CheckList from "./src/CheckList";
 
 import firebase from "firebase";
 import Routes from "./Routes/Routes3";
@@ -56,6 +57,7 @@ const HomeStack1 = () => {
       <AuthStack.Screen name="home" component={HomePage} />
       <AuthStack.Screen name="about" component={About} />
       <AuthStack.Screen name="backPackCalc" component={BackPackCalculator} />
+      <AuthStack.Screen name="checkList" component={CheckList} />
     </AuthStack.Navigator>
   );
 };
